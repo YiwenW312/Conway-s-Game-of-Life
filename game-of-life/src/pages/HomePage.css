@@ -1,0 +1,74 @@
+/* HomePage Styles */
+.home-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.home-content {
+  margin-bottom: 1.5rem;
+}
+
+.home-rules {
+  background: #f9f9f9;
+  border-left: 4px solid #d091b2;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.home-rules h2 {
+  margin-top: 0;
+}
+
+.home-rules ul {
+  padding-left: 1.5rem;
+}
+
+.home-link {
+  display: inline-block;
+  padding: 0rem 0rem;
+  background-color: #f9e2f3;
+  color: rgb(67, 64, 104);
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.home-link:hover,
+.home-link:focus {
+  background-color: #feb8cc;
+  text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+    border-radius: 4px;
+  }
+
+  .home-header,
+  .home-content p,
+  .home-rules h2,
+  .home-rules ul {
+    font-size: 0.8rem;
+  }
+
+  .home-link {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .home-rules {
+    padding: 0.5rem;
+    border-left: 3px solid #d091b2;
+  }
+}

@@ -21,25 +21,31 @@ export const GameProvider = ({ children }) => {
 
     // Function to update the grid size
     const updateGridSize = useCallback((rows, cols) => {
+        const newGrid = createClusteredGrid(rows, cols);
+        const newCellAges = Array(rows).fill(null).map(() => Array(cols).fill(0));
+
         setGridSize({ rows, cols });
-        setGrid(createClusteredGrid(rows, cols));
+        setGrid(newGrid);
+        setCellAges(newCellAges);
         setGeneration(0);
         setIsPlaying(false);
     }, []);
 
+
     // Function to toggle the cell state
     const toggleCellState = (rowIndex, colIndex) => {
         setGrid(currentGrid => {
-            const newGrid = [...currentGrid];
+            const newGrid = currentGrid.map(row => [...row]);
             newGrid[rowIndex][colIndex] = currentGrid[rowIndex][colIndex] ? 0 : 1;
             return newGrid;
         });
     };
 
+
     // Function to reset the game to the initial state
     const resetGame = () => {
         setGrid(createClusteredGrid(gridSize.rows, gridSize.cols, 5, 3));
-        setCellAges(createInitialCellAges(gridSize.rows, gridSize.cols)); 
+        setCellAges(createInitialCellAges(gridSize.rows, gridSize.cols));
         setGeneration(0);
         setIsPlaying(false);
     };
@@ -70,7 +76,7 @@ export const GameProvider = ({ children }) => {
                 grid,
                 setGrid,
                 cellAges,
-                useHeatmap, 
+                useHeatmap,
                 setUseHeatmap,
                 isPlaying,
                 setIsPlaying,

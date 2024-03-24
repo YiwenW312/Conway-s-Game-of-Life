@@ -1,13 +1,25 @@
 import React, { useContext } from 'react';
 import Cell from './Cell';
 import GameContext from '../context/GameContext';
-import '..CSS/Grid.css';
+import './Grid.css';
 
 const Grid = () => {
-  const { grid, cellAges, toggleCellState, useHeatmap } = useContext(GameContext);
+  const { grid, cellAges, toggleCellState, useHeatmap, gridSize } = useContext(GameContext);
+
+  const gridStyle = {
+    display: 'grid',
+    gridTemplateColumns: `repeat(${gridSize.cols}, 20px)`,
+    gridTemplateRows: `repeat(${gridSize.rows}, 20px)`,
+    gap: '1px',
+    alignContent: 'center',
+  };
+
+  if (!grid || !grid[0] || !cellAges || !cellAges[0]) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div className="grid-container">
+    <div className="grid-container" style={gridStyle}>
       {grid.map((row, rowIndex) =>
         row.map((cell, colIndex) => (
           <Cell

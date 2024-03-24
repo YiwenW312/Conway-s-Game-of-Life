@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import GamePage from './pages/GamePage';
 import CreditsPage from './pages/CreditsPage';
-import Navbar from './components/layout/navbar';
+import Navbar from './Navbar';
 import './App.css';
-import './navbar.css';
+import './Navbar.css';
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { GameProvider} from '../context/GameContext';
+import { GameProvider } from '../context/GameContext';
 import GameContext from '../context/GameContext';
 import Grid from '../components/Grid';
 import Controls from '../components/Controls';
@@ -10,10 +10,9 @@ const GamePage = () => {
     return (
         <GameProvider>
             <div className="App">
-                <h1>Conway's Game of Life</h1>
+                <LivingCellsCount />
                 <Grid />
                 <Controls />
-                <LivingCellsCount />
             </div>
         </GameProvider>
     );
@@ -26,6 +25,7 @@ const LivingCellsCount = () => {
     return (
         <div>
             <p>Living Cells: {livingCells}</p>
+            <br />
         </div>
     );
 };

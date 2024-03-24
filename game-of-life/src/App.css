@@ -1,74 +1,97 @@
-/* Apply a reset to remove default margins and padding */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
+nav {
+  background-color: #333;
+  color: white;
+  padding: 1em;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav div {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 5px 10px;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+
+h1,
+h2 {
+  margin-bottom: 0.5em;
+}
+
+ul {
+  margin-top: 0.5em;
+  list-style-type: none;
+}
+
+ul li::before {
+  content: '• ';
+  color: #333;
+  font-weight: bold;
+}
+
+ul li {
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
   body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-size: 14px;
   }
-  
-  /* Navigation styles */
+
   nav {
-    background-color: #333;
-    color: white;
-    padding: 1em;
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    padding: 0.5em;
   }
-  
-  nav div {
-    font-weight: bold;
+
+  nav div,
+  nav a {
+    font-size: 0.8em;
+  }
+
+
+  h1 {
     font-size: 1.5em;
   }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    padding: 5px 10px;
+
+  h2 {
+    font-size: 1.2em;
   }
-  
-  nav a:hover, nav a.active {
-    background-color: #555;
-    border-radius: 5px;
-  }
-  
-  /* Page content styles */
-  div {
-    padding: 20px;
-  }
-  
-  h1, h2 {
-    margin-bottom: 0.5em;
-  }
-  
-  ul {
-    margin-top: 0.5em;
-    list-style-type: none;
-  }
-  
-  ul li::before {
-    content: '• ';
-    color: #333; /* Change the bullet point color */
-    font-weight: bold; /* Make bullet points bold */
-  }
-  
+
+
   ul li {
-    margin-bottom: 0.5em;
+    font-size: 0.9em;
   }
-  
-  a {
-    color: #0066cc;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
+}

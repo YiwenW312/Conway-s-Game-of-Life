@@ -1,30 +1,65 @@
-button {
-    margin-right: 10px;
-    padding: 10px 15px;
-    background-color: #7985ba;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 30vh; 
+    padding-top: 10px;
+    background-color: #f4f4f4; 
 }
 
-button:hover {
-    background-color: #57347a;
+button {
+    margin: 10px; 
+    padding: 15px 20px; 
+    background-color: #5a67d8; 
+    color: white;
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s; 
+}
+
+button:hover, button:focus {
+    background-color: #4c51bf; 
+    transform: translateY(-2px); 
+    outline: none; 
 }
 
 button:disabled {
-    background-color: #999;
+    background-color: #a0aec0; 
+    cursor: not-allowed; 
 }
 
 input[type="number"] {
     padding: 10px;
     margin: 0 10px;
-    border-radius: 4px;
+    border-radius: 8px;
     border: 1px solid #ddd;
+    font-size: 1rem;
+    background-color: #edf2f7; 
 }
 
 .LivingCellsCount {
-    font-size: 16px;
-    color: #666;
-    margin: 10px 0;
+    font-size: 30px; 
+    color: #2d3748; 
+    margin: 10px 0; 
+    font-weight: 500; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .App {
+        min-height: auto; 
+        padding: 20px 0; 
+    }
+
+    button,
+    input[type="number"] {
+        padding: 10px 15px; 
+        font-size: 0.9rem; 
+    }
+
+    .LivingCellsCount {
+        font-size: 18px; 
+    }
 }

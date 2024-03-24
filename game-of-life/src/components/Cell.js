@@ -1,19 +1,24 @@
 const Cell = ({ isAlive, age, toggleCellState, useHeatmap }) => {
   const getCellColor = () => {
     if (isAlive) {
-      return 'DarkOliveGreen'; 
+      return 'DarkOliveGreen';
     } else if (useHeatmap) {
-      const ageCap = 10;
-      const intensity = Math.max(255 - (age / ageCap) * 255, 0);
-      return `rgb(${intensity}, ${intensity}, 255)`; 
+      if (age === 0) {
+        return 'white';
+      }
+      const ageCap = -10;
+      const intensityR = (age / ageCap) * (255 - 85) + 85;
+      const intensityG = (age / ageCap) * (255 - 107) + 107;
+      const intensityB = (age / ageCap) * (255 - 47) + 47;
+      return `rgb(${intensityR}, ${intensityG}, ${intensityB})`;
     } else {
       return 'white';
     }
   };
 
   const cellStyle = {
-    width: '20px',
-    height: '20px',
+    width: '20px', 
+    height: '20px', 
     backgroundColor: getCellColor(),
     border: '1px solid gray',
     display: 'inline-block',
@@ -24,4 +29,4 @@ const Cell = ({ isAlive, age, toggleCellState, useHeatmap }) => {
 
 
 export default Cell;
-  
+
