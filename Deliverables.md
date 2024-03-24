@@ -1,5 +1,5 @@
 # GitHub Repo Link
-https://github.com/YiwenW312/Conway_s_Game_of_Life
+https://github.com/YiwenW312/Yiwen-Wang-Assignment2 
 
 # Render App Link
 https://yiwen-wang-project2.onrender.com
