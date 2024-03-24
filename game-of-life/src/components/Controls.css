@@ -1,0 +1,9 @@
+.controls {
+    margin: 20px;
+  }
+  
+  .controls button,
+  .controls input[type="number"] {
+    margin: 5px;
+    padding: 10px;
+  }

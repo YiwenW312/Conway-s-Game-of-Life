@@ -1,0 +1,30 @@
+button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    background-color: #7985ba;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #57347a;
+}
+
+button:disabled {
+    background-color: #999;
+}
+
+input[type="number"] {
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.LivingCellsCount {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
