@@ -18,10 +18,22 @@
   margin-bottom: 1.5rem;
 }
 
+.home-content p,
+.home-feature-description {
+  margin-bottom: 1rem;
+  color: #4a5568;
+}
+
+.home-feature-description strong {
+  font-weight: bold;
+  color: #4c51bf;
+}
+
 .home-rules {
   background: #f9f9f9;
   border-left: 4px solid #d091b2;
   padding: 1rem;
+  margin-top: 2rem;
   border-radius: 4px;
 }
 

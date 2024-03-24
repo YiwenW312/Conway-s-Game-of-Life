@@ -17,8 +17,8 @@ const Cell = ({ isAlive, deadIteration, toggleCellState, useHeatmap }) => {
   };
 
   const cellStyle = {
-    width: '20px', 
-    height: '20px', 
+    width: '20px',
+    height: '20px',
     backgroundColor: getCellColor(),
     border: '1px solid gray',
     display: 'inline-block',

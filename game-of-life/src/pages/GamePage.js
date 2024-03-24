@@ -12,6 +12,7 @@ const GamePage = () => {
             <div className="App">
                 <LivingCellsCount />
                 <Grid />
+                <br />
                 <Controls />
             </div>
         </GameProvider>

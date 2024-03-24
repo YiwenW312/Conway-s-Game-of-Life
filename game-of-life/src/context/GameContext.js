@@ -63,7 +63,7 @@ export const GameProvider = ({ children }) => {
         let interval;
 
         if (isPlaying) {
-            interval = setInterval(goToNextGeneration, 100);
+            interval = setInterval(goToNextGeneration, 100);//100ms
         }
 
         return () => clearInterval(interval);

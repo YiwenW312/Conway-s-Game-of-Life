@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import GameContext from '../context/GameContext';
+import './Controls.css';
 
 const Controls = () => {
     const {
@@ -59,30 +60,33 @@ const Controls = () => {
     };
 
     return (
-        <div>
+        <div className='container'>
             {error && <div style={{ color: 'red' }}>{error}</div>}
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Rows:
-                    <input type="number" value={rows} min="3" max="40" onChange={handleRowChange} />
-                </label>
-                <label>
-                    Columns:
-                    <input type="number" value={cols} min="3" max="40" onChange={handleColChange} />
-                </label>
-                <button type="submit">Update Size</button>
-            </form>
-            <button onClick={handleNext}>Next Frame</button>
-            <button onClick={handleReset}>Reset</button>
-            <button onClick={handleAutoplayToggle}>
-                {isPlaying ? 'Stop' : 'Start'} Autoplay
-            </button>
-            <button onClick={handleHeatmapToggle}>
-                {useHeatmap ? 'Hide Heatmap' : 'Show Heatmap'}
-            </button>
+            <div className="input-group">
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        Rows:
+                        <input type="number" value={rows} min="3" max="40" onChange={handleRowChange} />
+                    </label>
+                    <label>
+                        Columns:
+                        <input type="number" value={cols} min="3" max="40" onChange={handleColChange} />
+                    </label>
+                    <button type="submit">Update Size</button>
+                </form>
+            </div>
+            <div className="button-group">
+                <button onClick={handleNext}>Next Frame</button>
+                <button onClick={handleAutoplayToggle}>
+                    {isPlaying ? 'Stop' : 'Start'} Autoplay
+                </button>
+                <button onClick={handleReset}>Reset</button>
+                <button onClick={handleHeatmapToggle}>
+                    {useHeatmap ? 'Hide Heatmap' : 'Show Heatmap'}
+                </button>
+            </div>
         </div>
     );
-};
+}
 
 export default Controls;
-
