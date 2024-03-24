@@ -1,8 +1,8 @@
-export const computeNextGenerationWithAges = (grid, cellAges) => {
+export const computeNextGenerationWithAges = (grid, cellDeadIteration) => {
   const rows = grid.length;
   const cols = grid[0].length;
   const nextGrid = grid.map(arr => [...arr]);
-  const nextCellAges = cellAges.map(arr => [...arr]);
+  const nextcellDeadIteration = cellDeadIteration.map(arr => [...arr]);
 
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
@@ -25,19 +25,19 @@ export const computeNextGenerationWithAges = (grid, cellAges) => {
       if (cell === 1) {
         if (liveNeighbors < 2 || liveNeighbors > 3) {
           nextGrid[i][j] = 0;
-          nextCellAges[i][j] = -1;
+          nextcellDeadIteration[i][j] = -1;
         }
-      } else if (cell === 0){
+      } else if (cell === 0) {
         if (liveNeighbors === 3) {
           nextGrid[i][j] = 1;
-        } else if (cellAges[i][j] < 0){
-          nextCellAges[i][j]--;
+        } else if (cellDeadIteration[i][j] < 0) {
+          nextcellDeadIteration[i][j]--;
         }
       }
     }
   }
 
-  return { nextGrid, nextCellAges };
+  return { nextGrid, nextcellDeadIteration };
 };
 
 

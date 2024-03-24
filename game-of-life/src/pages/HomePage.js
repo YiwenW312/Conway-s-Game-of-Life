@@ -6,8 +6,7 @@ function HomePage() {
     <div className="home-container">
       <h1 className="home-header">Hi, welcome to Conway’s Game of Life!</h1>
       <div className="home-content">
-        <p>This game is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input.</p>
-        <p>You can learn more <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank" rel="noopener noreferrer" className="home-link">here</a>.</p>
+        <p>This game is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input.You can learn more <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank" rel="noopener noreferrer" className="home-link">here</a>.</p>
       </div>
       <div className="home-rules">
         <h2>Rules:</h2>

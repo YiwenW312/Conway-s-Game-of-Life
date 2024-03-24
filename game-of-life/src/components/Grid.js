@@ -4,7 +4,7 @@ import GameContext from '../context/GameContext';
 import './Grid.css';
 
 const Grid = () => {
-  const { grid, cellAges, toggleCellState, useHeatmap, gridSize } = useContext(GameContext);
+  const { grid, cellDeadIteration, toggleCellState, useHeatmap, gridSize } = useContext(GameContext);
 
   const gridStyle = {
     display: 'grid',
@@ -14,7 +14,7 @@ const Grid = () => {
     alignContent: 'center',
   };
 
-  if (!grid || !grid[0] || !cellAges || !cellAges[0]) {
+  if (!grid || !grid[0] || !cellDeadIteration || !cellDeadIteration[0]) {
     return <div>Loading...</div>;
   }
 
@@ -25,7 +25,7 @@ const Grid = () => {
           <Cell
             key={`${rowIndex}-${colIndex}`}
             isAlive={cell === 1}
-            age={cellAges[rowIndex][colIndex]}
+            deadIteration={cellDeadIteration[rowIndex][colIndex]}
             useHeatmap={useHeatmap}
             toggleCellState={() => toggleCellState(rowIndex, colIndex)}
           />

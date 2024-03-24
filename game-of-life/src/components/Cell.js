@@ -1,15 +1,15 @@
-const Cell = ({ isAlive, age, toggleCellState, useHeatmap }) => {
+const Cell = ({ isAlive, deadIteration, toggleCellState, useHeatmap }) => {
   const getCellColor = () => {
     if (isAlive) {
       return 'DarkOliveGreen';
     } else if (useHeatmap) {
-      if (age === 0) {
+      if (deadIteration === 0) {
         return 'white';
       }
-      const ageCap = -10;
-      const intensityR = (age / ageCap) * (255 - 85) + 85;
-      const intensityG = (age / ageCap) * (255 - 107) + 107;
-      const intensityB = (age / ageCap) * (255 - 47) + 47;
+      const deadIterationCap = -10;
+      const intensityR = (deadIteration / deadIterationCap) * (255 - 85) + 85;
+      const intensityG = (deadIteration / deadIterationCap) * (255 - 107) + 107;
+      const intensityB = (deadIteration / deadIterationCap) * (255 - 47) + 47;
       return `rgb(${intensityR}, ${intensityG}, ${intensityB})`;
     } else {
       return 'white';

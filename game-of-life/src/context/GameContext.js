@@ -8,12 +8,12 @@ export const GameProvider = ({ children }) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [generation, setGeneration] = useState(0);
     const [gridSize, setGridSize] = useState({ rows: 20, cols: 20 });
-    const [cellAges, setCellAges] = useState(createInitialCellAges(20, 20));
+    const [cellDeadIteration, setcellDeadIteration] = useState(createInitialcellDeadIteration(20, 20));
     const [useHeatmap, setUseHeatmap] = useState(false);
 
 
     // Initialize cell ages with 0 (dead cells) 
-    function createInitialCellAges(rows, cols) {
+    function createInitialcellDeadIteration(rows, cols) {
         return Array.from({ length: rows }, () =>
             Array.from({ length: cols }, () => 0)
         );
@@ -22,11 +22,11 @@ export const GameProvider = ({ children }) => {
     // Function to update the grid size
     const updateGridSize = useCallback((rows, cols) => {
         const newGrid = createClusteredGrid(rows, cols);
-        const newCellAges = Array(rows).fill(null).map(() => Array(cols).fill(0));
+        const newcellDeadIteration = Array(rows).fill(null).map(() => Array(cols).fill(0));
 
         setGridSize({ rows, cols });
         setGrid(newGrid);
-        setCellAges(newCellAges);
+        setcellDeadIteration(newcellDeadIteration);
         setGeneration(0);
         setIsPlaying(false);
     }, []);
@@ -45,18 +45,18 @@ export const GameProvider = ({ children }) => {
     // Function to reset the game to the initial state
     const resetGame = () => {
         setGrid(createClusteredGrid(gridSize.rows, gridSize.cols, 5, 3));
-        setCellAges(createInitialCellAges(gridSize.rows, gridSize.cols));
+        setcellDeadIteration(createInitialcellDeadIteration(gridSize.rows, gridSize.cols));
         setGeneration(0);
         setIsPlaying(false);
     };
 
     // Updated function to compute the next generation and update cell ages
     const goToNextGeneration = useCallback(() => {
-        const { nextGrid, nextCellAges } = computeNextGenerationWithAges(grid, cellAges);
+        const { nextGrid, nextcellDeadIteration } = computeNextGenerationWithAges(grid, cellDeadIteration);
         setGrid(nextGrid);
-        setCellAges(nextCellAges);
+        setcellDeadIteration(nextcellDeadIteration);
         setGeneration(gen => gen + 1);
-    }, [grid, cellAges]);
+    }, [grid, cellDeadIteration]);
 
     // This effect will start the autoplay when isPlaying is true and stop it when isPlaying is false
     useEffect(() => {
@@ -75,7 +75,7 @@ export const GameProvider = ({ children }) => {
             value={{
                 grid,
                 setGrid,
-                cellAges,
+                cellDeadIteration,
                 useHeatmap,
                 setUseHeatmap,
                 isPlaying,
