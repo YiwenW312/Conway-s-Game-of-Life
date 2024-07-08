@@ -1,10 +1,22 @@
-# Project 2 - Conway's Game of Life
+# Conway's Game of Life
 
 ## Overview
 
 For this project, you will create a simulation known as Conway's Game of Life using JavaScript and React. Conway's Game of Life is a cellular automaton devised by the British mathematician John Horton Conway in 1970. The game is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. You will create a grid-based game where cells live or die based on the rules provided.
 
 - Demo URL: https://yiwen-wang-project2.onrender.com/
+
+## Project Overview
+- Developed an interactive Game of Life using JavaScript and React: Implemented dynamic grid customization, real-time cell toggling, and state management with React Context API.
+
+- Role: Developer
+
+- Technologies Used: JavaScript, React, CSS, HTML, Git
+
+## Key Contributions and Achievements
+- Created functions for computing cell generations, neighbor counting, and cell state transitions.
+- Enhancing user experience with intuitive UI and heatmap visualization.
+- Successfully developed an engaging and interactive web-based Game of Life.
 
 ## Rubric
 
